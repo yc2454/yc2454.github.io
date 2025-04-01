@@ -25,7 +25,7 @@ electoral_votes = {
 results = {
     "Biden": {
         "states": ["California", "New York", "Illinois", "Washington", "South Carolina", 
-                   "Massachusetts", "Michigan", "Minnesota", "Colorado", 
+                   "Massachusetts", "Michigan", "Minnesota", "Colorado", "North Carolina", 
                    "Oregon", "Virginia", "Nevada", "New Mexico", "Hawaii", 
                    "Connecticut", "Delaware", "Maryland", "New Jersey", "Rhode Island", 
                    "Vermont", "Maine", "Arizona", "Indiana", "Florida", "Pennsylvania", "Wisconsin", 
@@ -33,7 +33,7 @@ results = {
         "photo": "bluecat.jpg"
     },
     "Trump": {
-        "states": ["Ohio", "North Carolina", 
+        "states": ["Ohio", 
                    "Georgia", "Alabama", "Mississippi", 
                    "Kentucky", "Missouri", 
                    "Louisiana", "Arkansas", "Oklahoma", "West Virginia", 
