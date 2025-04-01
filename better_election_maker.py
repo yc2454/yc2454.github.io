@@ -44,8 +44,8 @@ results = {
 }
 
 photo_urls = {
-    "bluecat.jpg": "https://github.com/yc2454/yc2454.github.io/blob/main/bluecat.jpg?raw=true",
-    "trump.jpg": "https://github.com/yc2454/yc2454.github.io/blob/main/trump.jpg?raw=true"
+    "bluecat.jpg": "https://raw.githubusercontent.com/yc2454/yc2454.github.io/main/bluecat.jpg",
+    "trump.jpg": "https://raw.githubusercontent.com/yc2454/yc2454.github.io/main/trump.jpg"
 }
 
 # Compute total votes for each candidate
