@@ -44,8 +44,8 @@ results = {
 }
 
 photo_urls = {
-    "bluecat.jpg": "https://github.com/yc2454/yc2454.github.io/blob/main/bluecat.jpg",
-    "trump.jpg": "https://github.com/yc2454/yc2454.github.io/blob/main/trump.jpg"
+    "bluecat.jpg": "https://github.com/yc2454/yc2454.github.io/blob/main/bluecat.jpg?raw=true",
+    "trump.jpg": "https://github.com/yc2454/yc2454.github.io/blob/main/trump.jpg?raw=true"
 }
 
 # Compute total votes for each candidate
@@ -84,6 +84,7 @@ gdf["color"] = gdf["id"].apply(get_color)
 for _, row in gdf.iterrows():
     state_photo = get_photo(row["id"])
     photo_path = photo_urls[state_photo]
+    print(photo_path)
     popup_content = f'<img src="{photo_path}" width="100px"><br><b>{row["name"]}</b>'
     
     folium.GeoJson(
