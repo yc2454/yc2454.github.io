@@ -83,9 +83,8 @@ m = folium.Map(location=[37.8, -96], zoom_start=4)
 gdf["color"] = gdf["id"].apply(get_color)
 for _, row in gdf.iterrows():
     state_photo = get_photo(row["id"])
-    photo_path = photo_urls[state_photo]
-    print(photo_path)
-    popup_content = f'<img src="{state_photo}" width="100px"><br><b>{row["name"]}</b>'
+    print(state_photo)
+    popup_content = f'<img src={state_photo} width="100px"><br><b>{row["name"]}</b>'
     
     folium.GeoJson(
         row["geometry"],
