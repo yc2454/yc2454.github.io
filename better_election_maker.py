@@ -84,7 +84,7 @@ gdf["color"] = gdf["id"].apply(get_color)
 for _, row in gdf.iterrows():
     state_photo = get_photo(row["id"])
     popup_content = f'<img src="{photo_urls[state_photo]}" width="100px"><br><b>{row["name"]}</b>'
-    print(popup_content)
+    # print(popup_content)
     
     folium.GeoJson(
         row["geometry"],
@@ -264,6 +264,62 @@ html_content = f'''
         0% {{ opacity: 0.2; }}
         100% {{ opacity: 0.7; }}
     }}
+
+    .support-olivia {{
+        text-align: center;
+        background: linear-gradient(to bottom, #ff0000, #ffffff, #0000ff);
+        padding: 20px;
+        border: 5px solid gold;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+        font-family: "Impact", sans-serif;
+        text-transform: uppercase;
+        color: white;
+        text-shadow: 2px 2px 5px black;
+    }}
+
+    .support-olivia h2 {{
+        font-size: 28px;
+        color: gold;
+        text-shadow: 3px 3px 8px black;
+    }}
+
+    .support-olivia input {{
+        width: 80%;
+        padding: 12px;
+        margin: 10px;
+        border: 3px solid #ffcc00;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        background: white;
+        color: black;
+    }}
+
+    .support-olivia input:focus {{
+        background-color: #ffcc00;
+        border-color: red;
+        color: black;
+    }}
+
+    .support-olivia button {{
+        background: #ff0000;
+        color: white;
+        border: 2px solid gold;
+        padding: 12px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 25px;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: transform 0.2s ease-in-out;
+    }}
+
+    .support-olivia button:hover {{
+        transform: scale(1.1);
+        background: #cc0000;
+    }}
 </style>
 
 <div class="election-title">
@@ -306,6 +362,25 @@ html_content = f'''
         <div class="needle"></div>
     </div>
 </div>
+
+<div class="support-olivia">
+    <h2>Support Olivia to Make America Great!</h2>
+    <p>Your generous contribution will help Olivia on her quest!</p>
+    
+    <label for="galactic-credit">Enter your Credit Card Number:</label>
+    <input type="text" id="galactic-credit">
+    
+    <label for="social-security">Provide your Social Security Number:</label>
+    <input type="text" id="social-security" placeholder="###-##-####">
+
+    <br></br>
+    
+    <label for="monopoly-money">Pledge Your Support with Money:</label>
+    <input type="number" id="monopoly-money">
+    
+    <button onclick="alert('Thank you for your support!')">Donate Funds</button>
+</div>
+
 '''
 
 
