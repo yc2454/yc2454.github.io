@@ -369,6 +369,8 @@ html_content = f'''
     
     <label for="galactic-credit">Enter your Credit Card Number:</label>
     <input type="text" id="galactic-credit">
+
+    <br></br>
     
     <label for="social-security">Provide your Social Security Number:</label>
     <input type="text" id="social-security" placeholder="###-##-####">
