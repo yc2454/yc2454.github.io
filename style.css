@@ -1,18 +1,20 @@
 :root {
-  --bg: #ffffff;
-  --text: #1a1a1a;
-  --muted: #6b6b6b;
+  --bg: #fdfcf8;
+  --text: #211f1c;
+  --muted: #6f6a62;
   --accent: #cc0033; /* Rutgers scarlet */
-  --rule: #e4e4e4;
+  --rule: #ddd8cf;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --serif: "XCharter", Charter, "Bitstream Charter", "Charis SIL", Georgia, serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #16181d;
-    --text: #e8e6e3;
-    --muted: #9a9a9a;
+    --bg: #191714;
+    --text: #e6e2da;
+    --muted: #989186;
     --accent: #ff5c77;
-    --rule: #2e3138;
+    --rule: #35312b;
   }
 }
 
@@ -22,48 +24,55 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  font-size: 1.0625rem;
-  line-height: 1.65;
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 main {
-  max-width: 42rem;
+  max-width: 44rem;
   margin: 0 auto;
-  padding: 4rem 1.25rem 3rem;
+  padding: 4.5rem 1.25rem 3rem;
 }
 
 header {
-  margin-bottom: 3rem;
+  margin-bottom: 3.25rem;
 }
 
 h1 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.5rem;
+  font-variant: small-caps;
+  letter-spacing: 0.02em;
+  font-size: 2.75rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 .tagline {
   color: var(--muted);
-  margin-top: 0.35rem;
+  margin-top: 0.5rem;
+  font-style: italic;
 }
 
 .links {
-  margin-top: 1rem;
+  margin-top: 1.15rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem;
+  gap: 0.6rem 1.4rem;
 }
 
 .links a {
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
 }
 
 a {
@@ -81,16 +90,22 @@ section {
 }
 
 h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.35rem;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+  font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: 1rem;
-  padding-bottom: 0.4rem;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.35rem;
   border-bottom: 1px solid var(--rule);
 }
 
+section p {
+  text-align: justify;
+  hyphens: auto;
+}
+
 section p + p {
-  margin-top: 0.85rem;
+  margin-top: 0.9rem;
 }
 
 /* News */
@@ -100,16 +115,17 @@ section p + p {
 
 .news li {
   display: grid;
-  grid-template-columns: 6rem 1fr;
-  gap: 0.75rem;
-  margin-bottom: 0.7rem;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0.9rem;
+  margin-bottom: 0.75rem;
 }
 
 .news .date {
+  font-family: var(--mono);
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.78rem;
   white-space: nowrap;
-  padding-top: 0.15rem;
+  padding-top: 0.3rem;
 }
 
 /* Publications */
@@ -119,33 +135,37 @@ section p + p {
 
 .pubs li {
   margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--rule);
 }
 
 .pub-title {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .pub-authors {
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .pub-venue {
-  font-size: 0.95rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
   color: var(--muted);
-  font-style: italic;
+  margin-top: 0.2rem;
 }
 
 .pub-links {
-  margin-top: 0.25rem;
+  margin-top: 0.45rem;
   display: flex;
-  gap: 1rem;
-  font-size: 0.9rem;
+  gap: 0.75rem;
 }
 
 .pub-links a {
+  font-family: var(--mono);
+  font-size: 0.78rem;
   border: 1px solid var(--rule);
-  border-radius: 4px;
-  padding: 0.05rem 0.5rem;
+  border-radius: 3px;
+  padding: 0.1rem 0.55rem;
 }
 
 .pub-links a:hover {
@@ -163,40 +183,64 @@ section p + p {
   justify-content: space-between;
   align-items: baseline;
   gap: 1.5rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.65rem;
 }
 
 .edu-when {
+  font-family: var(--mono);
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.78rem;
   white-space: nowrap;
 }
 
 /* Projects */
+.project {
+  margin-bottom: 1.4rem;
+}
+
 .project h3 {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
+  font-weight: 700;
   margin-bottom: 0.35rem;
+}
+
+.project p {
+  text-align: justify;
+  hyphens: auto;
 }
 
 footer {
   margin-top: 4rem;
-  padding-top: 1.25rem;
+  padding-top: 1.2rem;
   border-top: 1px solid var(--rule);
   color: var(--muted);
-  font-size: 0.9rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
 }
 
 @media (max-width: 480px) {
   main {
-    padding-top: 2.5rem;
+    padding-top: 2.75rem;
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 2.15rem;
+  }
+
+  section p,
+  .project p {
+    text-align: left;
+    hyphens: none;
   }
 
   .news li {
     grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .edu li {
+    flex-direction: column;
     gap: 0.1rem;
+    margin-bottom: 0.9rem;
   }
 }
