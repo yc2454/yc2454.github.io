@@ -1,0 +1,12 @@
+# Private resume copies — cv.pdf is the published version
+resume_2025.pdf
+resume_for_phd_2024.pdf
+
+# CV LaTeX source (contains phone number in comments) and build artifacts
+resume/
+
+# macOS
+.DS_Store
+
+# Claude Code local config
+.claude/

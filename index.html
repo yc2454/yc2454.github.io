@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yalu Cai — PhD Student, Rutgers University</title>
+  <meta name="description" content="Yalu Cai is a PhD student in Computer Science at Rutgers University working on eBPF verification, proof-carrying code, and programming languages.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Yalu Cai</h1>
+      <p class="tagline">PhD student in Computer Science at Rutgers University</p>
+      <nav class="links">
+        <a href="mailto:yc1795@cs.rutgers.edu">Email</a>
+        <a href="https://github.com/yc2454">GitHub</a>
+        <a href="https://www.linkedin.com/in/yalu-cai">LinkedIn</a>
+        <a href="papers/cai-ebpf26-pcb.pdf">eBPF '26 Paper</a>
+        <a href="cv.pdf">CV</a>
+      </nav>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am a PhD student in the Department of Computer Science at
+        <a href="https://www.cs.rutgers.edu/">Rutgers University</a>, advised by
+        <a href="https://people.cs.rutgers.edu/~sn349/">Prof.&nbsp;Santosh Nagarakatte</a>
+        in the Rutgers Architecture and Programming Languages (APL) group.
+      </p>
+      <p>
+        My research sits at the intersection of programming languages and operating
+        systems. I work on making the Linux kernel's eBPF verifier accept more safe
+        programs without growing its trusted computing base — using ideas from
+        proof-carrying code, abstract interpretation, and SMT-based proof generation.
+      </p>
+      <p>
+        Before starting my PhD, I spent three years as a software engineer at
+        <a href="https://www.certik.com/">CertiK</a>, building formal verification
+        tools for smart contracts — including compilers from Solidity to Dafny and
+        Boogie and a JML-style specification language for Solidity. I hold an MS in
+        Computer Science from Duke University and studied biological engineering at
+        Cornell University and Zhejiang University.
+      </p>
+    </section>
+
+    <section id="news">
+      <h2>News</h2>
+      <ul class="news">
+        <li>
+          <span class="date">Aug 2026</span>
+          <span class="news-text">
+            Our paper <em>Proof-Carrying-BPF Programs for the eBPF Verifier</em> was
+            accepted at <a href="https://conferences.sigcomm.org/sigcomm/2026/">eBPF '26</a> —
+            see you in Prague!
+          </span>
+        </li>
+        <li>
+          <span class="date">Sep 2025</span>
+          <span class="news-text">Started my PhD at Rutgers University.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <ol class="pubs">
+        <li>
+          <p class="pub-title">Proof-Carrying-BPF Programs for the eBPF Verifier</p>
+          <p class="pub-authors"><strong>Yalu Cai</strong>, Santosh Nagarakatte</p>
+          <p class="pub-venue">
+            eBPF '26: The 4th Workshop on eBPF and Kernel Extensions,
+            Prague, Czech Republic, September 2026
+          </p>
+          <p class="pub-links">
+            <a href="papers/cai-ebpf26-pcb.pdf">PDF</a>
+            <a href="https://github.com/rutgers-apl/Alivio">Code</a>
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul class="edu">
+        <li>
+          <span class="edu-what">Software Engineer, <a href="https://www.certik.com/">CertiK</a> — formal
+            verification of Solidity smart contracts (Solidity-to-Dafny/Boogie
+            compilers, specification language design, deductive verification)</span>
+          <span class="edu-when">2022 – 2025</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="edu">
+        <li>
+          <span class="edu-what">PhD in Computer Science, Rutgers University</span>
+          <span class="edu-when">2025 – present</span>
+        </li>
+        <li>
+          <span class="edu-what">MS in Computer Science, Duke University</span>
+          <span class="edu-when">2020 – 2022</span>
+        </li>
+        <li>
+          <span class="edu-what">BS in Biological Engineering, Cornell University</span>
+          <span class="edu-when">2018 – 2020</span>
+        </li>
+        <li>
+          <span class="edu-what">BE in Biological Engineering, Zhejiang University</span>
+          <span class="edu-when">2016 – 2018</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3><a href="https://github.com/rutgers-apl/Alivio">Alivio</a></h3>
+        <p>
+          A userspace verifier and proof generator for proof-carrying BPF. Alivio
+          mirrors the Linux kernel's eBPF verifier in Rust — reconstructing control
+          flow and tracking register state through abstract interpretation — and
+          generates machine-checkable SMT proofs for the program points the kernel's
+          own analysis cannot prove safe. It matches the kernel verifier's verdict on
+          all 3,267 BPF selftests and produces proof bundles that let a patched kernel
+          load production eBPF programs from Cilium, Calico, and Inspektor Gadget that
+          the stock verifier rejects — with zero userspace round trips at load time.
+        </p>
+      </div>
+      <div class="project">
+        <h3>Verified Translator from EVM Bytecode to eWASM</h3>
+        <p>
+          A translator from a subset of Ethereum Virtual Machine bytecode to
+          WebAssembly, with a machine-checked proof of semantic preservation in Coq.
+          Built during my MS at Duke.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        yc1795@cs.rutgers.edu · Department of Computer Science, Rutgers University,
+        Piscataway, NJ
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
