@@ -7,6 +7,13 @@
   <meta name="description" content="Yalu Cai is a PhD student in Computer Science at Rutgers University working on eBPF verification, proof-carrying code, and programming languages.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    // Apply a saved theme choice before first paint to avoid a flash.
+    (function () {
+      var t = localStorage.getItem("theme");
+      if (t) document.documentElement.dataset.theme = t;
+    })();
+  </script>
 </head>
 <body>
   <main>
@@ -19,6 +26,7 @@
         <a href="https://www.linkedin.com/in/yalu-cai-5ba17b1a4/">LinkedIn</a>
         <a href="papers/cai-ebpf26-pcb.pdf">eBPF '26 Paper</a>
         <a href="cv.pdf">CV</a>
+        <button id="theme-toggle" type="button" aria-label="Toggle dark mode">&#x263E;</button>
       </nav>
     </header>
 
@@ -151,5 +159,26 @@
       </p>
     </footer>
   </main>
+  <script>
+    (function () {
+      var btn = document.getElementById("theme-toggle");
+      var systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+      function current() {
+        return document.documentElement.dataset.theme ||
+          (systemDark.matches ? "dark" : "light");
+      }
+      function render() {
+        btn.textContent = current() === "dark" ? "☀" : "☾";
+      }
+      btn.addEventListener("click", function () {
+        var next = current() === "dark" ? "light" : "dark";
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem("theme", next);
+        render();
+      });
+      systemDark.addEventListener("change", render);
+      render();
+    })();
+  </script>
 </body>
 </html>

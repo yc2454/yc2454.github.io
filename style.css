@@ -8,8 +8,18 @@
   --serif: "XCharter", Charter, "Bitstream Charter", "Charis SIL", Georgia, serif;
 }
 
+/* Dark palette applies when the visitor's system prefers dark (unless they
+   chose light with the toggle) or when they chose dark explicitly. */
+:root[data-theme="dark"] {
+  --bg: #16181c;
+  --text: #e4e5e7;
+  --muted: #92959b;
+  --accent: #6aa5e8;
+  --rule: #2c2f34;
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #16181c;
     --text: #e4e5e7;
     --muted: #92959b;
@@ -73,6 +83,22 @@ h1 {
   font-family: var(--mono);
   font-size: 0.8rem;
   letter-spacing: 0.01em;
+}
+
+#theme-toggle {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--accent);
+  cursor: pointer;
+  line-height: inherit;
+}
+
+#theme-toggle:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 a {
