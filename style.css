@@ -2,7 +2,7 @@
   --bg: #ffffff;
   --text: #1a1c1e;
   --muted: #63666b;
-  --accent: #cc0033; /* Rutgers scarlet */
+  --accent: #0d5eaf; /* Aegean blue — the Ulysses first-edition binding */
   --rule: #e2e3e6;
   --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
   --serif: "XCharter", Charter, "Bitstream Charter", "Charis SIL", Georgia, serif;
@@ -13,7 +13,7 @@
     --bg: #16181c;
     --text: #e4e5e7;
     --muted: #92959b;
-    --accent: #ff5871;
+    --accent: #6aa5e8;
     --rule: #2c2f34;
   }
 }
