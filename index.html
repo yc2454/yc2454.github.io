@@ -132,8 +132,8 @@
         <h3><a href="https://github.com/rutgers-apl/Alivio">Alivio</a></h3>
         <p>
           A userspace verifier and proof generator for proof-carrying BPF. Alivio
-          mirrors the Linux kernel's eBPF verifier in Rust — reconstructing control
-          flow and tracking register state through abstract interpretation — and
+          mirrors the Linux kernel's eBPF verifier in Rust (reconstructing control
+          flow and tracking register state through abstract interpretation) and
           generates machine-checkable SMT proofs for the program points the kernel's
           own analysis cannot prove safe. It matches the kernel verifier's verdict on
           all 3,267 BPF selftests and produces proof bundles that let a patched kernel
